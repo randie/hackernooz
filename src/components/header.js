@@ -7,7 +7,7 @@ function Header() {
       <div className="flex">
         <img src="/logo.png" alt="Hacker Nooz Logo" className="logo" />
         <NavLink to="/" className="header-title">
-          Hacker Newz
+          Hacker Nooz
         </NavLink>
       </div>
       <div className="flex">

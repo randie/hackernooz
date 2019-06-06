@@ -4,6 +4,10 @@ body {
   font-family: Verdana, Geneva, sans-serif;
 }
 
+input {
+  max-width: 500px;
+}
+
 .header {
   background-color: #ff6600;
   white-space: nowrap;
