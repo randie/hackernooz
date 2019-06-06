@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+.app-container {
+  width: 85%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.route-container {
+  background-color: rgb(246, 246, 239);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
