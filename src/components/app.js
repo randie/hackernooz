@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import Login from './auth/login';
 import Header from './header';
 import LinkList from './link/link-list';
+import CreateLink from './link/create-link';
 import useCurrentUser from '../utils/use-current-user';
 import firebase, { FirebaseContext } from '../firebase';
 
@@ -19,6 +20,7 @@ function App() {
               <Route exact path="/" render={() => <Redirect to="/new/1" />} />
               <Route path="/login" component={Login} />
               <Route path="/new/:page" component={LinkList} />
+              <Route path="/create" component={CreateLink} />
             </Switch>
           </div>
         </div>
