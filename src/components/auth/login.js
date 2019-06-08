@@ -50,7 +50,7 @@ function Login(props) {
         ? await firebase.login(email, password)
         : await firebase.register(name, email, password);
       window.alert('user was authenticated');
-      debugger;
+      props.history.push('/');
     } catch (error) {
       setAuthenticationError('Login failed!');
       console.error('ERROR! Authentication failed:', error.message);
