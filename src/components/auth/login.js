@@ -32,6 +32,7 @@ function validateLoginValues({ email, password }) {
 
 function Login(props) {
   const [isLogin, setIsLogin] = React.useState(true);
+  const [authenticationError, setAuthenticationError] = React.useState(null);
 
   const {
     handleBlur,
@@ -44,12 +45,16 @@ function Login(props) {
 
   async function authenticateUser() {
     const { name, email, password } = values;
-    const response = isLogin
-      ? await firebase.login(email, password)
-      : await firebase.register(name, email, password);
-    console.log('>> response from firebase:', { response });
-    window.alert('user was authenticated');
-    debugger;
+    try {
+      isLogin
+        ? await firebase.login(email, password)
+        : await firebase.register(name, email, password);
+      window.alert('user was authenticated');
+      debugger;
+    } catch (error) {
+      setAuthenticationError('Login failed!');
+      console.error('ERROR! Authentication failed:', error.message);
+    }
   }
 
   return (
@@ -87,6 +92,7 @@ function Login(props) {
           className={errors.password && 'error-input'}
         />
         {errors.password && <p className="error-text">{errors.password}</p>}
+        {authenticationError && <p className="error-text">{authenticationError}</p>}
         <div className="flex mt3">
           <button
             type="submit"
