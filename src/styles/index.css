@@ -57,6 +57,23 @@ input {
   text-decoration: none;
 }
 
+.header-button {
+  margin-left: 0.25rem;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.header-name {
+  color: black;
+  text-decoration: none;
+}
+
+.divider {
+  margin-left: 0.25rem;
+  color: black;
+}
+
 .app-container {
   width: 85%;
   margin-right: auto;

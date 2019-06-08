@@ -1,7 +1,9 @@
 import React from 'react';
 import { withRouter, NavLink } from 'react-router-dom';
+import { FirebaseContext } from '../firebase';
 
 function Header() {
+  const { currentUser } = React.useContext(FirebaseContext);
   return (
     <div className="header">
       <div className="flex">
@@ -11,9 +13,17 @@ function Header() {
         </NavLink>
       </div>
       <div className="flex">
-        <NavLink to="/login" className="header-link">
-          login
-        </NavLink>
+        {currentUser ? (
+          <>
+            <div className="header-name">{currentUser.displayName}</div>
+            <div className="divider">|</div>
+            <div className="header-button">logout</div>
+          </>
+        ) : (
+          <NavLink to="/login" className="header-link">
+            login
+          </NavLink>
+        )}
       </div>
     </div>
   );
