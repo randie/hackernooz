@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import useFormValidation from '../../utils/use-form-validation';
 import firebase from '../../firebase';
 
@@ -107,6 +108,11 @@ function Login(props) {
           </button>
         </div>
       </form>
+      {isLogin && (
+        <div className="forgot-password">
+          <Link to="/forgot">Forgot password?</Link>
+        </div>
+      )}
     </div>
   );
 }

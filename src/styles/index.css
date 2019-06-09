@@ -82,10 +82,12 @@ input {
 
 .route-container {
   background-color: rgb(246, 246, 239);
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
+  padding: 0.25rem 1rem 1rem 1rem;
+}
+
+.forgot-password {
+  padding: 1em 0 0;
+  font-size: 0.8rem;
 }
 
 .logo {
