@@ -4,6 +4,10 @@ import { FirebaseContext } from '../firebase';
 
 function Header() {
   const { currentUser, firebase } = React.useContext(FirebaseContext);
+
+  console.log('>> 2 currentUser:', currentUser);
+  debugger;
+
   return (
     <div className="header">
       <div className="flex">
