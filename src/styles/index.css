@@ -6,6 +6,21 @@ body {
 
 input {
   max-width: 500px;
+  padding: 0.1em;
+  margin-bottom: 0.2em;
+}
+
+.input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-style: solid;
+  border-width: 1px;
+  padding: 0.2rem;
+  margin: 0.5rem 0;
+  width: 100%;
+  margin-bottom: 0.2em;
+  max-width: 500px;
 }
 
 .button {
@@ -27,11 +42,17 @@ input {
   border-radius: 4px;
 }
 
+.success-text,
 .error-text {
   margin: 0.25em 0 0.5em 0;
   padding: 0;
-  color: red;
   font-size: 0.8rem;
+}
+.success-text {
+  color: green;
+}
+.error-text {
+  color: red;
 }
 
 .header {
@@ -46,7 +67,7 @@ input {
 .header-title {
   font-weight: 700;
   margin-left: 0.25rem;
-  margin-right: 5px;
+  margin-right: 1rem;
   color: black;
   text-decoration: none;
 }
