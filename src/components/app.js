@@ -4,6 +4,7 @@ import Login from './auth/login';
 import ForgotPassword from './auth/forgot-password';
 import Header from './header';
 import LinkList from './link/link-list';
+import LinkDetail from './link/link-detail';
 import CreateLink from './link/create-link';
 import useCurrentUser from '../utils/use-current-user';
 import firebase, { FirebaseContext } from '../firebase';
@@ -20,9 +21,10 @@ function App() {
             <Switch>
               <Route exact path="/" render={() => <Redirect to="/new/1" />} />
               <Route path="/login" component={Login} />
-              <Route path="/new/:page" component={LinkList} />
-              <Route path="/create" component={CreateLink} />
               <Route path="/forgot" component={ForgotPassword} />
+              <Route path="/create" component={CreateLink} />
+              <Route path="/new/:page" component={LinkList} />
+              <Route path="/link/:linkId" component={LinkDetail} />
             </Switch>
           </div>
         </div>

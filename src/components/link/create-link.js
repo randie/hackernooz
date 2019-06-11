@@ -42,7 +42,7 @@ function CreateLink(props) {
     const newLink = {
       url,
       description,
-      postedby: { id: currentUser.uid, name: currentUser.displayName },
+      postedBy: { id: currentUser.uid, name: currentUser.displayName },
       votes: [],
       comments: [],
       createdAt: Date.now(),

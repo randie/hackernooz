@@ -96,6 +96,10 @@ input {
   color: black;
 }
 
+.link {
+  color: #828282;
+}
+
 .app-container {
   width: 85%;
   margin-right: auto;
@@ -105,6 +109,12 @@ input {
 .route-container {
   background-color: rgb(246, 246, 239);
   padding: 0.25rem 1rem 1rem 1rem;
+}
+
+.vote-button {
+  font-size: 11px;
+  color: #828282;
+  margin-left: 0.25rem;
 }
 
 .forgot-password {
