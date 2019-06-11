@@ -25,7 +25,7 @@ input {
 
 .button {
   font-family: monospace;
-  font-size: 10pt;
+  font-size: 1rem;
   color: black;
   background-color: buttonface;
   text-align: center;
@@ -35,6 +35,7 @@ input {
   border-color: buttonface;
   cursor: pointer;
   max-width: 250px;
+  padding: 6px 12px;
 }
 
 .error-input {
