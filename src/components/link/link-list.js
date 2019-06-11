@@ -12,7 +12,8 @@ function LinkList() {
   );
 
   React.useEffect(() => {
-    getLinksCallback();
+    const unsubscribe = getLinksCallback();
+    return () => unsubscribe();
   }, [getLinksCallback]);
 
   function handleSnapshot(snapshot) {
