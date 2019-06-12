@@ -22,6 +22,18 @@ function LinkItem({ link, index, showCount, history }) {
     }
   }
 
+  async function handleDelete() {
+    try {
+      const linkRef = firebase.db.collection('links').doc(link.id);
+      await linkRef.delete();
+      console.log('>> document deleted');
+    } catch (error) {
+      console.log(`ERROR! Unable to delete link ${link.id}`, error.message);
+    }
+  }
+
+  const isLinkOwner = currentUser && currentUser.uid === link.postedBy.id;
+
   return (
     <div className="flex items-start mt2">
       <div className="flex items-center">
@@ -41,6 +53,15 @@ function LinkItem({ link, index, showCount, history }) {
           <Link to={`/link/${link.id}`}>
             {link.comments.length > 0 ? `${link.comments.length} comments` : 'discuss'}
           </Link>
+          {isLinkOwner && (
+            <>
+              {' '}
+              &bull;{' '}
+              <span className="delete-button" onClick={handleDelete}>
+                delete
+              </span>
+            </>
+          )}
         </div>
       </div>
     </div>
