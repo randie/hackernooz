@@ -2,12 +2,17 @@ import React from 'react';
 import { FirebaseContext } from '../../firebase';
 import LinkItem from './link-item';
 
-function LinkList() {
+function LinkList(props) {
   const { firebase } = React.useContext(FirebaseContext);
   const [links, setLinks] = React.useState([]);
+  const sortByNewest = props.location.pathname.includes('new');
 
   const getLinksCallback = React.useCallback(
-    () => firebase.db.collection('links').onSnapshot(handleSnapshot),
+    () =>
+      firebase.db
+        .collection('links')
+        .orderBy('createdAt', 'desc')
+        .onSnapshot(handleSnapshot),
     [firebase.db],
   );
 
@@ -21,9 +26,17 @@ function LinkList() {
     setLinks(links);
   }
 
+  function sortLinks() {
+    if (sortByNewest) {
+      return links;
+    }
+    // else sort by top voted
+    return links.slice().sort((link1, link2) => link2.votes.length - link1.votes.length);
+  }
+
   return (
     <div>
-      {links.map((link, index) => (
+      {sortLinks().map((link, index) => (
         <LinkItem key={link.id} link={link} showCount={true} index={index + 1} />
       ))}
     </div>

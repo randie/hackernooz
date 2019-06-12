@@ -14,6 +14,10 @@ function Header() {
         <NavLink to="/" className="header-link">
           new
         </NavLink>
+        <div className="divider">|</div>
+        <NavLink to="/top" className="header-link">
+          top
+        </NavLink>
         {currentUser && (
           <>
             <div className="divider">|</div>

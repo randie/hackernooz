@@ -23,6 +23,7 @@ function App() {
               <Route path="/login" component={Login} />
               <Route path="/forgot" component={ForgotPassword} />
               <Route path="/create" component={CreateLink} />
+              <Route path="/top" component={LinkList} />
               <Route path="/new/:page" component={LinkList} />
               <Route path="/link/:linkId" component={LinkDetail} />
             </Switch>
