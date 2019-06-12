@@ -6,6 +6,7 @@ import Header from './header';
 import LinkList from './link/link-list';
 import LinkDetail from './link/link-detail';
 import CreateLink from './link/create-link';
+import SearchLinks from './link/search-links';
 import useCurrentUser from '../utils/use-current-user';
 import firebase, { FirebaseContext } from '../firebase';
 
@@ -26,6 +27,7 @@ function App() {
               <Route path="/top" component={LinkList} />
               <Route path="/new/:page" component={LinkList} />
               <Route path="/link/:linkId" component={LinkDetail} />
+              <Route path="/search" component={SearchLinks} />
             </Switch>
           </div>
         </div>
