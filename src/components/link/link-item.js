@@ -26,7 +26,6 @@ function LinkItem({ link, index, showCount, history }) {
     try {
       const linkRef = firebase.db.collection('links').doc(link.id);
       await linkRef.delete();
-      console.log('>> document deleted');
     } catch (error) {
       console.log(`ERROR! Unable to delete link ${link.id}`, error.message);
     }
