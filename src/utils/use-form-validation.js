@@ -1,6 +1,6 @@
 import React from 'react';
 
-function useFormValidataion(initialState, validateValues, authenticateUser) {
+function useFormValidataion(initialState, validate, submit) {
   const [values, setValues] = React.useState(initialState);
   const [errors, setErrors] = React.useState({});
   const [isSubmitting, setIsSubmitting] = React.useState(false);
@@ -9,11 +9,11 @@ function useFormValidataion(initialState, validateValues, authenticateUser) {
     if (isSubmitting) {
       const noErrors = Object.keys(errors).length === 0;
       if (noErrors) {
-        authenticateUser();
+        submit();
       }
       setIsSubmitting(false);
     }
-  }, [authenticateUser, errors, isSubmitting]);
+  }, [submit, errors, isSubmitting]);
 
   function handleChange(event) {
     event.persist();
@@ -24,14 +24,14 @@ function useFormValidataion(initialState, validateValues, authenticateUser) {
   }
 
   function handleBlur() {
-    const validationErrors = validateValues(values);
+    const validationErrors = validate(values);
     setErrors(validationErrors);
   }
 
   function handleSubmit(event) {
     event.preventDefault();
     setIsSubmitting(true);
-    const validationErrors = validateValues(values);
+    const validationErrors = validate(values);
     setErrors(validationErrors);
   }
 
