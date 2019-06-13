@@ -18,4 +18,7 @@ Coming Soon
 
 ## To Do
 
+- [ ] LinkDetail
+- [ ] Comments
+- [ ] Pagination
 - [ ] Deploy to Firebase
