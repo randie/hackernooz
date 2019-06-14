@@ -44,7 +44,15 @@ function LinkItem({ link, index, showCount, history }) {
       </div>
       <div className="ml1">
         <div>
-          {link.description} <span className="link">({getDomain(link.url)})</span>
+          <a
+            href={link.url}
+            className="black no-underline underline-hover"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {link.description}
+          </a>{' '}
+          <span className="link">({getDomain(link.url)})</span>
         </div>
         <div className="f6 lh-copy gray">
           {link.votes.length} votes &bull; by {link.postedBy.name} &bull;{' '}
