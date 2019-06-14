@@ -8,7 +8,7 @@ const getDomain = url => url.replace(/^https?:\/\//i, '');
 function LinkItem({ link, index, showCount, history }) {
   const { firebase, currentUser } = React.useContext(FirebaseContext);
 
-  async function handleVote() {
+  async function handleAddVote() {
     if (!currentUser) {
       history.push('/login');
       return;
@@ -38,7 +38,7 @@ function LinkItem({ link, index, showCount, history }) {
       <div className="flex items-center">
         {showCount && <span className="gray">{index}.</span>}
         {/* TODO: hide vote button if currentUser is the link owner or has already voted before */}
-        <div className="vote-button" onClick={handleVote}>
+        <div className="vote-button" onClick={handleAddVote}>
           ▲
         </div>
       </div>

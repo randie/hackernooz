@@ -98,7 +98,7 @@ function Login(props) {
             type="submit"
             className="button pointer mr2"
             disabled={isSubmitting}
-            style={{ background: isSubmitting ? 'grey' : 'orange' }}
+            style={{ background: isSubmitting ? 'gray' : 'orange' }}
           >
             Submit
           </button>
