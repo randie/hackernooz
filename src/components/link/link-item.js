@@ -18,7 +18,9 @@ function LinkItem({ link, index, showCount, history }) {
     if (doc.exists) {
       const previousVotes = doc.data().votes;
       const newVote = { votedBy: { id: currentUser.uid, name: currentUser.displayName } };
-      linkRef.update({ votes: [...previousVotes, newVote] });
+      const votes = [...previousVotes, newVote];
+      const voteCount = votes.length;
+      linkRef.update({ votes, voteCount });
     }
   }
 
@@ -55,7 +57,7 @@ function LinkItem({ link, index, showCount, history }) {
           <span className="link">({getDomain(link.url)})</span>
         </div>
         <div className="f6 lh-copy gray">
-          {link.votes.length} votes &bull; by {link.postedBy.name} &bull;{' '}
+          {link.voteCount} votes &bull; by {link.postedBy.name} &bull;{' '}
           {distanceInWordsToNow(link.createdAt)} ago &bull;{' '}
           <Link to={`/link/${link.id}`}>
             {link.comments.length > 0 ? `${link.comments.length} comments` : 'discuss'}

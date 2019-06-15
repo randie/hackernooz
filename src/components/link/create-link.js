@@ -44,6 +44,7 @@ function CreateLink(props) {
       description,
       postedBy: { id: currentUser.uid, name: currentUser.displayName },
       votes: [],
+      voteCount: 0,
       comments: [],
       createdAt: Date.now(),
     };
