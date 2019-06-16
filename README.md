@@ -1,10 +1,10 @@
 # Hacker Nooz
 
-> **Note:** WIP. This is a learn-by-doing project.
+> **Note:** WIP. This is a learn-by-doing project to play with React Hooks and Firebase
 
 ## Synopsis
 
-Hacker News clone
+Poor Man's Hacker News clone
 
 This project uses the following:
 
@@ -12,13 +12,7 @@ This project uses the following:
 - Tachyons
 - Firebase (auth, firestore, serverless, hosting)
 
-## Live Demo
-
-Coming Soon
-
 ## To Do
 
-- [ ] LinkDetail
-- [ ] Comments
 - [ ] Pagination
 - [ ] Deploy to Firebase
